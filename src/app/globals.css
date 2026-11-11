@@ -1,0 +1,429 @@
+:root {
+  --azul: #1d4ed8;
+  --azul-claro: #dbeafe;
+  --verde: #15803d;
+  --verde-claro: #dcfce7;
+  --laranja: #c2410c;
+  --laranja-claro: #ffedd5;
+  --texto: #1f2937;
+  --texto-suave: #4b5563;
+  --borda: #e5e7eb;
+  --fundo: #f7f8fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+a {
+  color: var(--azul);
+}
+
+/* Cabeçalho e menu */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.5rem;
+  background: #111827;
+}
+
+.brand {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.menu-link {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  color: #d1d5db;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.menu-link:hover {
+  color: #fff;
+}
+
+.menu-link.ativo.alunos {
+  background: var(--azul);
+  color: #fff;
+}
+
+.menu-link.ativo.disciplinas {
+  background: var(--verde);
+  color: #fff;
+}
+
+.menu-link.ativo.matriculas {
+  background: var(--laranja);
+  color: #fff;
+}
+
+/* Estrutura */
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.footer {
+  border-top: 1px solid var(--borda);
+  padding: 1rem 1.5rem;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.lead {
+  color: var(--texto-suave);
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+/* Início */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  display: block;
+  padding: 1.1rem;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-top: 4px solid var(--azul);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card h2 {
+  margin: 0 0 0.4rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.tema-alunos {
+  border-top-color: var(--azul);
+}
+
+.tema-disciplinas {
+  border-top-color: var(--verde);
+}
+
+.tema-matriculas {
+  border-top-color: var(--laranja);
+}
+
+/* Alunos */
+.area-alunos {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1.5rem;
+}
+
+.sidebar {
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1rem;
+  align-self: start;
+}
+
+.sidebar h2 {
+  color: var(--azul);
+  margin: 0 0 0.75rem;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sidebar nav a {
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--texto);
+}
+
+.sidebar nav a:hover {
+  background: var(--fundo);
+}
+
+.sidebar nav a.ativo {
+  background: var(--azul-claro);
+  color: var(--azul);
+  font-weight: 600;
+}
+
+.conteudo {
+  min-width: 0;
+}
+
+.titulo-linha {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.titulo-linha h1 {
+  margin: 0;
+}
+
+.contador {
+  background: var(--azul-claro);
+  color: var(--azul);
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.contador.verde {
+  background: var(--verde-claro);
+  color: var(--verde);
+}
+
+.contador.laranja {
+  background: var(--laranja-claro);
+  color: var(--laranja);
+}
+
+.lista-alunos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.lista-alunos li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--azul);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+}
+
+.lista-alunos strong {
+  display: block;
+}
+
+.lista-alunos span {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+.detalhes {
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin: 0 0 1.25rem;
+}
+
+.detalhes dt {
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.detalhes dd {
+  margin: 0.15rem 0 1rem;
+  font-size: 1.05rem;
+}
+
+.detalhes dd:last-child {
+  margin-bottom: 0;
+}
+
+/* Disciplinas */
+.card.disciplina {
+  border-top-color: var(--verde);
+}
+
+.card.disciplina h2 {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+}
+
+.identificador {
+  color: var(--verde);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Matrículas */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabela th,
+.tabela td {
+  text-align: left;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--borda);
+}
+
+.tabela thead th {
+  background: var(--laranja-claro);
+  color: var(--laranja);
+  font-size: 0.85rem;
+}
+
+.tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Formulários */
+.formulario {
+  display: grid;
+  gap: 1rem;
+  max-width: 460px;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.formulario label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.formulario input,
+.formulario select {
+  font: inherit;
+  font-weight: 400;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+  outline: 2px solid var(--azul);
+  outline-offset: 1px;
+}
+
+.acoes {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.botao {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--azul);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: #1e40af;
+}
+
+.botao.verde {
+  background: var(--verde);
+}
+
+.botao.verde:hover {
+  background: #166534;
+}
+
+.botao.laranja {
+  background: var(--laranja);
+}
+
+.botao.laranja:hover {
+  background: #9a3412;
+}
+
+.erro {
+  margin: 0;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 0.9rem;
+}
+
+/* 404 */
+.nao-encontrado {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.nao-encontrado .codigo {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--borda);
+}
+
+.nao-encontrado p {
+  color: var(--texto-suave);
+}
